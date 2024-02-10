@@ -28,7 +28,7 @@ void merge(int *arr, int s, int e){
     
     // adding the remaining elements from the right side to temp array
     while(rightPointer <= e)
-        temp[temp.size() ]= arr[rightPointer++];
+        temp.push_back(arr[rightPointer++]);
 
     for(int i=0 ;i < temp.size(); i++)
         arr[s + i] = temp[i];
@@ -36,7 +36,6 @@ void merge(int *arr, int s, int e){
 }
 
 void mergeSort(int* arr, int s, int e){
-    mergeSort(arr, s,e);
     if(s>=e)
         return ;
 
@@ -55,7 +54,7 @@ int main() {
     int n = 7;
     cout << "Given array is \n";
     printArray(arr, n);
-    // mergeSort(arr, 0, n-1);
+    mergeSort(arr, 0, n-1);
     cout << "\n\nSorted array is \n";
     printArray(arr, n);
     return 0;
